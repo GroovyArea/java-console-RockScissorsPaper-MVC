@@ -1,12 +1,12 @@
-package first_challenge;
+package second_challenge;
 
 // Model 메서드 호출해주고 컨트롤러로 값 반환하는 메서드 만들기
 public class Service {
-	private Model model = new Model();
+	private ModelGame model = new ModelGame();
 	
 	// 승패 판단하는 모델 메서드 호출하는 넘.
-	public int judgeService(int playerRsp) {
-		return model.judgeRsp(playerRsp);
+	public int judgeService(int playerRsp, int comRsp) {
+		return model.judgeRsp(playerRsp, comRsp);
 
 	}
 
