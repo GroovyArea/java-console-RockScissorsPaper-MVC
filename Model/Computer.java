@@ -1,9 +1,9 @@
-package second_challenge;
+package Model;
 
 
 // 컴퓨터의 정보를 담고 있는 클래스
-public class ModelComputer {
-	private int comRsp = (int)(Math.random() * 3) + 1;
+public class Computer {
+	private int comRsp;
 
 	public int getComRsp() {
 		return comRsp;
@@ -13,5 +13,6 @@ public class ModelComputer {
 		this.comRsp = comRsp;
 	} 
 	
+
 	
 }
