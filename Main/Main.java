@@ -17,26 +17,30 @@ public class Main {
 		Controller controller = new Controller();
 
 		while (play) {
-			// 콤퓨타 가위바위보
-			int comRsp = (int)(Math.random() * 3) + 1;  
-			
+
 			// 게임 시작 출력 메서드 호출
 			ViewOutput.startGame();
 			
 			System.out.println();
 			
 			// 컨트롤러에게 가위바위보 판정 요청
-			if(controller.playRsp(ViewInput.inputRsp(), comRsp) == Result.LOSE.getGameResult()){
+			if(controller.playRsp(ViewInput.inputRsp(), comRsp()) == Result.LOSE.getGameResult()){
 				gameEnd();
 			}
 			
-			System.out.println();
 		}
 	}
+
 	
 	public static void gameEnd() {
-		ViewOutput.endtitle();
-		ViewOutput.gameResult();
-		play = false;
+		System.out.println();
+		ViewOutput.endtitle(); // 끝 문자열 출력
+		ViewOutput.gameResult(); // 게임 결과 출력
+		play = false; 
+	}
+	
+	// 콤퓨타 가위바위보 메서드
+	public static int comRsp() {
+		return (int)(Math.random() * 3) + 1; 
 	}
 }

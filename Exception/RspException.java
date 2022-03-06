@@ -6,5 +6,4 @@ public class RspException extends Exception {
 		super(message);
 	}
 
-	
 }
