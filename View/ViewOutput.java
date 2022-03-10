@@ -1,5 +1,8 @@
 package View;
 
+import Enum.PrintGameResult;
+import Enum.Result;
+import Enum.Rsp;
 import Model.WinDrawCount;
 
 public class ViewOutput {
@@ -11,10 +14,11 @@ public class ViewOutput {
 	}
 
 	// 1 게임 결과 출력 메서드
-	public static void singleGameResult(String str) {
+	public static void singleGameResult(PrintGameResult str) {
 		System.out.println(str);
+			System.out.println(str.getValue());
 	}
-	
+
 	// 게임 종료 출력 메서드
 	public static void endtitle() {
 		System.out.println(" == 게임 종료 ==");

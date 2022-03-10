@@ -1,23 +1,39 @@
 package Controller;
 
-import Model.Computer;
-import Model.Game;
+import Enum.PrintGameResult;
+import Enum.Result;
+import Enum.Rsp;
+import Exception.RspException;
 import Model.Player;
+import Model.WinDrawCount;
+import View.ViewOutput;
 
 // 요청을 받는 Controller
 public class Controller {
-	
-	Player player = new Player();
-	Computer computer = new Computer();
 
-	public int playRsp(int inputRsp, int comRsp) {
-		player.setPlayerRsp(inputRsp); // 입력한 가위바위보 플레이어에 넣어주고
-		computer.setComRsp(comRsp); // 컴터 카위바위보도 넣어주고
+	private Result result;
 
-		//승패 결과 숫자로 반환 객체 넘겨줘서
-		return Game.judgeProcess(player, computer);
+	public void playRsp(Rsp playerRsp) throws RspException {
+
+		final Player player = new Player(playerRsp);
+		this.result = player.play();
+
+		gameCount(); // 여기서 카운트
+		resultChange();
 	}
-	
-	
 
+	// 승리 무승부 카운트 변환 메서드
+	public void gameCount() {
+		Result.gameCount(result);
+	}
+
+	// viewOutput 결과 바꿔주고 출력하는 메서드
+	public void resultChange() {
+		PrintGameResult.resultOut(result);
+	}
+
+	// 게임 결과 반환 메서드
+	public Result gameResult() {
+		return result;
+	}
 }
