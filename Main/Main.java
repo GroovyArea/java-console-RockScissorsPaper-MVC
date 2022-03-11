@@ -29,6 +29,8 @@ public class Main {
 			// 게임 실행!
 			controller.playRsp(ViewInput.inputPlayerRsp());
 
+			System.out.println();
+			
 			// 컨트롤러에게 가위바위보 판정 요청 졌을 경우 종료
 			if (controller.gameResult() == Result.LOSE) {
 				gameEnd();

@@ -18,8 +18,8 @@ public class Controller {
 		final Player player = new Player(playerRsp);
 		this.result = player.play();
 
-		gameCount(); // 여기서 카운트
-		resultChange();
+		gameCount(); 
+		resultChange(); 
 	}
 
 	// 승리 무승부 카운트 변환 메서드

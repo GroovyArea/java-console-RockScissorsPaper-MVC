@@ -10,6 +10,4 @@ public class ComputerNumber {
 	public int getComputerNumber() {
 		return AUTO_Number;
 	}
-	
-	
 }

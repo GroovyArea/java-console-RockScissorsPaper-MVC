@@ -16,15 +16,13 @@ public enum PrintGameResult {
 	}
 
 	public static void resultOut(Result result) {
-		System.out.println(result);
-		switch (result) {
-		case WIN :
+		
+		if (result == Result.WIN)
 			ViewOutput.singleGameResult(WIN_RESULT);
-		case DRAW :
+		if (result == Result.DRAW)
 			ViewOutput.singleGameResult(DRAW_RESULT);
-		default :
+		if (result == Result.LOSE)
 			ViewOutput.singleGameResult(LOSE_RESULT);
-		}
 	}
 
 }

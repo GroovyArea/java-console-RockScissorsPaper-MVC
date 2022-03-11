@@ -15,8 +15,7 @@ public class ViewOutput {
 
 	// 1 게임 결과 출력 메서드
 	public static void singleGameResult(PrintGameResult str) {
-		System.out.println(str);
-			System.out.println(str.getValue());
+		System.out.println(str.getValue());
 	}
 
 	// 게임 종료 출력 메서드
@@ -27,6 +26,7 @@ public class ViewOutput {
 
 	// 게임 결과 출력
 	public static void gameResult() {
-		System.out.println("당신은 " + WinDrawCount.getWinCount() + " 번 이겼고, " + WinDrawCount.getDrawCount() + " 번 비겼습니다.");
+		System.out
+				.println("당신은 " + WinDrawCount.getWinCount() + " 번 이겼고, " + WinDrawCount.getDrawCount() + " 번 비겼습니다.");
 	}
 }
