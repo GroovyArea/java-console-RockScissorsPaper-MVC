@@ -5,12 +5,8 @@ import Model.WinDrawCount;
 public enum Result {
 
 	WIN, LOSE, DRAW;
-	/*
-	 * private final int gameResult;
-	 * 
-	 * private Result(int gameResult) { this.gameResult = gameResult; }
-	 */
 
+	// 결과 로직 반환
 	public static Result getGameResult(Rsp player, Rsp com) {
 
 		// 이김
@@ -29,6 +25,7 @@ public enum Result {
 		return LOSE;
 	}
 	
+	// enum 타입 결과를 매개변수로 받아 승 무 카운트
 	public static void gameCount(Result result) {
 		if(result == WIN)
 			WinDrawCount.plusWinCount();

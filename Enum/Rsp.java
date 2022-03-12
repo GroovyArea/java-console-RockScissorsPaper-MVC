@@ -2,6 +2,7 @@ package Enum;
 
 import Exception.RspException;
 
+
 public enum Rsp {
 
 	ROCK(1), SCISSOROS(2), PAPER(3);
