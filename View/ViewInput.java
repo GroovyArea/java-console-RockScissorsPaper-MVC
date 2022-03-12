@@ -7,7 +7,7 @@ import Exception.RspException;
 
 public class ViewInput {
 
-	private static final String RSP_INPUT = "1, 2, 3 중에서 숫자를 입력하세요.";
+	private static final String RSP_INPUT = "1[가위], 2[바위], 3[보] 중에서 숫자를 입력하세요.";
 
 	private static final Scanner SCANNER = new Scanner(System.in);
 
@@ -24,7 +24,9 @@ public class ViewInput {
 		Rsp input = Rsp.of(SCANNER.nextInt());
 
 		SCANNER.nextLine();
-
+		
+		System.out.println();
+		
 		return input;
 	}
 	
