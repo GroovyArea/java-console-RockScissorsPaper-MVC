@@ -11,13 +11,21 @@ import View.ViewOutput;
 // 요청을 받는 Controller
 public class Controller {
 
+	// 게임 결과를 가지고 있는 필드
 	private Result result;
 
+	// play 메서드
 	public void playRsp(Rsp playerRsp) throws RspException {
 
+		// 사용자 객체 생성
 		final Player player = new Player(playerRsp);
+		
+		// 게임결과 반환값을 필드에 저장
 		this.result = player.play();
-
+		
+		// 가위바위보 상태 값 출력
+		ViewOutput.whatYouInput(player.getRsp(), player.getComputer().getComRsp());
+		
 		gameCount(); 
 		resultChange(); 
 	}
