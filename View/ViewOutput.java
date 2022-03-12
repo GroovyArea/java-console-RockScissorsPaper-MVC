@@ -13,6 +13,13 @@ public class ViewOutput {
 		System.out.println("=============================");
 	}
 
+	// 가위바위보 뭐 냈는지 출력하는 메서드
+	public static void whatYouInput(Rsp player, Rsp computer) {
+		System.out.println("[참가자] : ["+player+"]");
+		System.out.println("[컴퓨터] : ["+computer+"]");
+		System.out.println();
+	}
+	
 	// 1 게임 결과 출력 메서드
 	public static void singleGameResult(PrintGameResult str) {
 		System.out.println(str.getValue());
@@ -27,6 +34,6 @@ public class ViewOutput {
 	// 게임 결과 출력
 	public static void gameResult() {
 		System.out
-				.println("당신은 " + WinDrawCount.getWinCount() + " 번 이겼고, " + WinDrawCount.getDrawCount() + " 번 비겼습니다.");
+				.println("당신은 [" + WinDrawCount.getWinCount() + "] 번 이겼고, [" + WinDrawCount.getDrawCount() + "] 번 비겼습니다.");
 	}
 }
