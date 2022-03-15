@@ -1,12 +1,8 @@
 package Enum;
 
-import View.ViewOutput;
-
 public enum PrintGameResult {
-	
-	WIN_RESULT("님이 이겼습니다."), 
-	DRAW_RESULT("비겼습니다."), 
-	LOSE_RESULT("컴퓨터가 이겼습니다.");
+
+	WIN_RESULT("님이 이겼습니다."), DRAW_RESULT("비겼습니다."), LOSE_RESULT("컴퓨터가 이겼습니다.");
 
 	private final String printGameResult;
 
@@ -18,14 +14,17 @@ public enum PrintGameResult {
 		return printGameResult;
 	}
 
-	public static void resultOut(Result result) {
-		
-		if (result == Result.WIN)
-			ViewOutput.singleGameResult(WIN_RESULT);
-		if (result == Result.DRAW)
-			ViewOutput.singleGameResult(DRAW_RESULT);
-		if (result == Result.LOSE)
-			ViewOutput.singleGameResult(LOSE_RESULT);
+	public static PrintGameResult of(Result result) {
+
+		switch (result) {
+		case WIN:
+			return WIN_RESULT;
+		case DRAW:
+			return DRAW_RESULT;
+		default:
+			return LOSE_RESULT;
+		}
+
 	}
 
 }
