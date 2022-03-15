@@ -37,7 +37,12 @@ public class Controller {
 
 	// viewOutput 결과 바꿔주고 출력하는 메서드
 	public void resultChange() {
-		PrintGameResult.resultOut(result);
+		if (result == Result.WIN)
+			ViewOutput.singleGameResult(PrintGameResult.of(result));
+		if (result == Result.DRAW)
+			ViewOutput.singleGameResult(PrintGameResult.of(result));
+		if (result == Result.LOSE)
+			ViewOutput.singleGameResult(PrintGameResult.of(result));
 	}
 
 	// 게임 결과 반환 메서드
