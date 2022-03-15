@@ -4,6 +4,7 @@ import Controller.Controller;
 import Enum.Result;
 import Exception.RspException;
 import Model.Computer;
+import Model.ComputerNumber;
 import Model.Computer;
 import Model.Player;
 import View.ViewInput;
@@ -24,7 +25,7 @@ public class Main {
 			System.out.println();
 
 			// 게임 실행!
-			controller.playRsp(ViewInput.inputPlayerRsp());
+			controller.playRsp(ViewInput.inputPlayerRsp(), new Computer(new ComputerNumber().getComputerNumber()));
 
 			System.out.println();
 
