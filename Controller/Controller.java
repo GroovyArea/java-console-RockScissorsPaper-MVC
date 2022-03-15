@@ -4,6 +4,7 @@ import Enum.PrintGameResult;
 import Enum.Result;
 import Enum.Rsp;
 import Exception.RspException;
+import Model.Computer;
 import Model.Player;
 import Model.WinDrawCount;
 import View.ViewOutput;
@@ -15,16 +16,16 @@ public class Controller {
 	private Result result;
 
 	// play 메서드
-	public void playRsp(Rsp playerRsp) throws RspException {
+	public void playRsp(Rsp playerRsp, Computer computer) throws RspException {
 
 		// 사용자 객체 생성
 		final Player player = new Player(playerRsp);
 		
 		// 게임결과 반환값을 필드에 저장
-		this.result = player.play();
+		this.result = gameOf(player, computer);
 		
 		// 가위바위보 상태 값 출력
-		ViewOutput.whatYouInput(player.getRsp(), player.getComputer().getComRsp());
+		ViewOutput.whatYouInput(player.getRsp(), computer.getComRsp());
 		
 		gameCount(); 
 		resultChange(); 
@@ -45,6 +46,11 @@ public class Controller {
 			ViewOutput.singleGameResult(PrintGameResult.of(result));
 	}
 
+	// 결과 얻어오는 메서드
+	public Result gameOf(Player player, Computer computer) throws RspException {
+		return Result.getGameResult(player.getRsp(), computer.getComRsp());
+	}
+	
 	// 게임 결과 반환 메서드
 	public Result gameResult() {
 		return result;
