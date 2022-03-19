@@ -22,13 +22,13 @@ public class Main {
 			// 게임 시작 문장 출력 메서드 호출
 			ViewOutput.startGame();
 
-			System.out.println();
+			ViewOutput.newLine();
 
-			// 게임 실행!
-			controller.playRsp(ViewInput.inputPlayerRsp(), new Computer(new ComputerNumber().getComputerNumber()));
+			// 게임 실행! (참가자 입력 가위바위보만 넘김)
+			controller.playRsp(ViewInput.inputPlayerRsp());
 
-			System.out.println();
-
+			ViewOutput.newLine();
+			
 			// 컨트롤러에게 가위바위보 판정 요청 졌을 경우 종료
 			if (controller.getGameResult() == Result.LOSE) {
 				gameEnd();
