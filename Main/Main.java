@@ -30,7 +30,7 @@ public class Main {
 			System.out.println();
 
 			// 컨트롤러에게 가위바위보 판정 요청 졌을 경우 종료
-			if (controller.gameResult() == Result.LOSE) {
+			if (controller.getGameResult() == Result.LOSE) {
 				gameEnd();
 				break;
 			}
