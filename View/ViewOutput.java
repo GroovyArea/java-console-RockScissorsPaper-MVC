@@ -30,7 +30,12 @@ public class ViewOutput {
 		System.out.println(" == 게임 종료 ==");
 		System.out.println("=================");
 	}
-
+	
+	// println() 메서드
+	public static void newLine() {
+		System.out.println();
+	}
+	
 	// 게임 결과 출력
 	public static void gameResult() {
 		System.out
