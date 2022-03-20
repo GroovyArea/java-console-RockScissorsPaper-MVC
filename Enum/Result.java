@@ -11,8 +11,8 @@ public enum Result {
 
 		// 이김
 		if (com == Rsp.ROCK && player == Rsp.PAPER 
-				|| com == Rsp.SCISSOROS && player == Rsp.ROCK
-				|| com == Rsp.PAPER && player == Rsp.SCISSOROS) {
+				|| com == Rsp.SCISSORS && player == Rsp.ROCK
+				|| com == Rsp.PAPER && player == Rsp.SCISSORS) {
 			return WIN;
 		}
 
