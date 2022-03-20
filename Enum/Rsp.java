@@ -5,7 +5,7 @@ import Exception.RspException;
 
 public enum Rsp {
 
-	ROCK(1), SCISSOROS(2), PAPER(3);
+	ROCK(1), SCISSORS(2), PAPER(3);
 
 	private final int rockScissorsPaper;
 
@@ -22,7 +22,7 @@ public enum Rsp {
 		case 1:
 			return ROCK;
 		case 2:
-			return SCISSOROS;
+			return SCISSORS;
 		case 3:
 			return PAPER;
 
